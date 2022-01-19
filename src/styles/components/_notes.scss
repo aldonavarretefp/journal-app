@@ -1,0 +1,75 @@
+.notes__main-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $orange;
+}
+
+.notes__appbar{
+    align-items: center;
+    background-color: white;
+    color: $primary;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    span{
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 3px;
+    }
+}
+
+.notes__content{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    height: 100%;
+}
+
+.notes__title-input,.notes__text-area{
+    border: none;
+    background-color: transparent;
+    letter-spacing: 2px;
+    &:focus{
+        outline: none;
+    }
+    //placeholder white
+    &::-webkit-input-placeholder {
+        color: white;
+    }
+}
+
+.notes__title-input {
+    color: white;
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 30px;
+
+}
+
+
+.notes__text-area{
+    text-align: justify;
+    white-space: normal;    
+    color: white;
+    font-size: 16px;
+    flex: 1 1 auto;
+    resize: none;
+
+}
+
+.notes__image img {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: rgba(255, 254, 255, 0.4) -5px 5px, rgba(235, 224, 231, 0.3) -10px 10px, rgba(230, 224, 228, 0.2) -15px 15px, rgba(249, 249, 249, 0.1) -20px 20px, rgba(228, 228, 228, 0.05) -25px 25px;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    }
+    &:hover {
+        height: 160px;
+    }
+}

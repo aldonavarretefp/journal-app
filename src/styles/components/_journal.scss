@@ -1,0 +1,124 @@
+.journal__main-content {
+    display: flex;
+    background-color: $orange;
+    
+}
+
+.journal__sidebar{
+    align-items: center;
+    background-color: $primary;
+    display: flex;
+    color:white;
+    flex-direction: column;
+    height: 100vh;
+    margin:0px;
+    width: 350px;
+    padding-right: 10px;
+
+}
+.journal__sidebar-navbar{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.journal__sidebar-navbar h3 {
+    font-weight: 100;
+
+}
+
+.journal__new-entry{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    margin: 10px 0;
+    transition: all 0.5s ease-in-out;
+    width: 80%;
+    height: 150px;
+    &:hover p{
+        // font-size: 18px;
+        letter-spacing: 3px;
+    }
+    &:hover i{
+        color: white;
+        translate: 0px -5px;
+        transform: translate(0px, -5px);
+
+    }
+    
+    i{
+        font-size: 55px;
+        transition: transform 0.3s ease;
+    }
+    p{
+        transition: all 0.3s ease;
+        font-size: 15px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        
+    }
+}
+
+/* Entry */
+.journal__entries {
+    display: flex;
+    flex: 1 1  auto;
+    flex-direction: column; 
+    margin-top: 10px;
+    margin-left:10px;
+    width: 90%;    
+    overflow-y: scroll;
+}
+.journal__entry{
+    align-items: center;
+    display: flex;
+    background-color: white;
+    border-radius: 2px;
+    color:$primary;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+
+}
+.journal__entry-picture{
+    width: 75px;
+    height: 75px;
+    border-radius: 2px;
+}
+
+.journal__entry-body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    p{
+        text-align: right;
+    }
+}
+.journal__entry-title{
+    font-size: 12px;
+    font-weight: 500;
+}
+.journal__entry-content{
+    font-size: 9px;
+    margin-top: 10px;
+
+}
+.journal__entry-date-box{
+    align-items: center;
+    font-size: 13px;
+    color:$primary;
+    display: flex;
+    flex-direction: column;
+    //10px to left and right
+    padding: 0 8px;
+}
+
+.journal__entry-date-box p{
+    margin: 0;
+
+}
