@@ -10,7 +10,7 @@
     transition: all 0.2s ease;
     font-size: 15px;
     font-weight: 500;
-    &:hover {
+    &:active:hover {
         background-color: $orange;
         font-size: 17px;
     }
@@ -24,8 +24,9 @@
     &:disabled{
         background-color: $light-gray;
         color: lighten($primary, 10%);
+        cursor: wait;
     }
-    &:hover {
+    &:active:hover:not() {
         background-color: $secondary;
         color: white;
     }
@@ -42,9 +43,9 @@
     background-color: $google-blue;
     border-radius: 2px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
-
-    transition: box-shadow .3s ease;
-
+    position: relative;
+    transition: box-shadow .3s ease, background-color .3s ease;
+    
     .google-icon-wrapper {
         position: absolute;
         margin-top: 1px;
@@ -71,8 +72,10 @@
     }
     &:hover {
         box-shadow: 0 0 6px $google-blue;
+        background-color: darken($google-blue, 5%);
     }
     &:active {
         background: $button-active-blue;
     }
+
 }

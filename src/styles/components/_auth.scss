@@ -16,6 +16,7 @@
     padding: 50px;
     width: 300px;
     height: 300px;
+    overflow: auto;
 }
 
 .auth__title{
@@ -51,7 +52,8 @@
 }
 
 .auth__alert-error{
-    color: red;
+    background-color: red;
+    color:white;
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -61,3 +63,34 @@
     display: flex;
     justify-content: center;
 }
+
+.dots-bars-1 {
+    width: 80px;
+    height: 100px;
+    --c: linear-gradient(white 0 0);
+    --r1: radial-gradient(farthest-side at bottom,white 93%,rgba(255, 255, 255, 0));
+    --r2: radial-gradient(farthest-side at top   ,white 93%,rgba(255, 255, 255, 0));
+    background: 
+      var(--c) ,
+      var(--r1),
+      var(--r2),
+      var(--c) ,  
+      var(--r1),
+      var(--r2),
+      var(--c) ,
+      var(--r1),
+      var(--r2);
+    background-repeat: no-repeat;
+    animation: db1 1s infinite  alternate;
+  }
+  
+  @keyframes db1 {
+    0%,10% {
+      background-size: 8px 0,8px 4px,8px 4px;
+      background-position: 0 50%,0 calc(50% - 2px),0 calc(50% + 2px),50% 50%,50% calc(50% - 2px),50% calc(50% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
+   }
+   90%,100% {
+      background-size: 8px 100%,8px 4px, 8px 4px;
+      background-position: 0 50%,0 -2px,0 calc(100% + 2px),50% 50%,50% -2px,50% calc(100% + 2px),100% 50%,100% -2px,100% calc(100% + 2px);
+   }
+  }

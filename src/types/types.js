@@ -1,0 +1,11 @@
+
+export const types =  {
+    AUTH_ERROR: '[AUTH] SET ERROR',
+    LOGIN: '[AUTH] LOGIN',
+    LOGOUT: '[AUTH] LOGOUT',
+    
+    UI_LOADING: '[UI] LOADING',
+    UI_LOADING_END: '[UI] LOADING END',
+    UI_SET_ERROR: '[UI] SET ERROR',
+    UI_REMOVE_ERROR: '[UI] REMOVE ERROR',
+};
