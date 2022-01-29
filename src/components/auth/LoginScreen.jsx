@@ -1,16 +1,18 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
+
 
 import isEmail from 'validator/lib/isEmail';
 
 
 import { useForm } from '../../hooks/useForm';
 import { startLoginEmailPassword, startLoginGoogle } from '../../actions/auth';
-import Swal from "sweetalert2";
+import {replaceInOut} from '../../helpers/auth';
 
 
+
+import 'animate.css'
 export const LoginScreen = () => {
 
   const dispatch = useDispatch();
@@ -71,6 +73,7 @@ export const LoginScreen = () => {
         <Link
           to='/auth/register'
           className="link"
+          onClick={replaceInOut}
         >
           Create New Account
         </Link>

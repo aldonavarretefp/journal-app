@@ -7,6 +7,7 @@ import 'animate.css';
 import { useForm } from '../../hooks/useForm';
 import { removeError, setError } from '../../actions/ui';
 import { startRegisterWithEmailPasswordName } from '../../actions/auth';
+import { replaceInOut } from '../../helpers/auth';
 
 
 export const RegisterScreen = () => {
@@ -75,6 +76,7 @@ export const RegisterScreen = () => {
                 <Link
                     to='/auth/login'
                     className="link"
+                    onClick={replaceInOut}
                 >
                     Already have an account?
                 </Link>

@@ -21,3 +21,17 @@ export const showAlert = (message) => {
     })
 
 }
+
+export const replaceInOut = () => {
+    const elem = document.querySelector('.in');
+    elem.classList.replace('fadeIn','fadeOut');
+    elem.classList.replace('in', 'out'); // Add .fade-in class
+    //add fadeout class
+
+
+    setTimeout(function () {
+        elem.classList.replace('fadeOut','fadeIn');
+        elem.classList.replace('out', 'in') // Add .fade-out class
+    }, 500);
+
+}

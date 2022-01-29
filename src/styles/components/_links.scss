@@ -3,10 +3,11 @@
     color: $primary;
     font-size: 15px;
     font-weight: 500;
-    transition: all 0.5s ease-in-out;
     margin-top: 10px;
+    transition: color 0.2s ease-in-out, font-size 0.3s ease-in-out, letter-spacing 0.2s ease-in-out;
     &:hover {
         color: $orange;
-        transition: all 0.5s ease-in-out;
+        font-size: 16px;
+        letter-spacing: 1px;
     }
 }

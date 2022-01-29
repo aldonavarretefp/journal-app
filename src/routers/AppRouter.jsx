@@ -9,6 +9,8 @@ import { Redirect } from 'react-router-dom';
 import { LoadingScreen } from '../components/Main/LoadingScreen';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
+import { startLoadingNotes } from '../actions/notes';
+
 
 export const AppRouter = () => {
 
@@ -18,23 +20,28 @@ export const AppRouter = () => {
 
 
     useEffect(() => {
+
         firebase.auth().onAuthStateChanged(user => {
+      
           if(user?.uid){
-              dispatch(login(user.uid,user.displayName));
+              dispatch(login(user.uid,user.displayName,user.photoURL));
+
               setisLoggedIn(true);
+              dispatch(startLoadingNotes(user.uid));
           }else{
             setisLoggedIn(false);
           }
             setChecking(false);
           
         });
+
     }, [dispatch,setisLoggedIn,setChecking]);
 
     if(checking){
         return <LoadingScreen />
     }
   
-  return <div>
+  return (
       <Router>
             <Switch>
                 <PublicRoute 
@@ -51,5 +58,5 @@ export const AppRouter = () => {
                 <Redirect to="/" />
             </Switch>
         </Router>
-  </div>;
+  );
 };

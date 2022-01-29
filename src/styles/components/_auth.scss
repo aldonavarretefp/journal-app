@@ -7,6 +7,7 @@
     margin:0px;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 .auth__box-container{
@@ -17,6 +18,33 @@
     width: 300px;
     height: 300px;
     overflow: auto;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    &.fadeOut{
+        animation: fadeOut;
+        animation-duration: 0.5s; 
+        @keyframes fadeOut{
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+    }
+    &.out{
+        animation: backOutLeft; 
+        animation-duration: 1.5s;
+    }
+    &.fadeIn{
+        animation: fadeIn; 
+        animation-duration: 2s;
+    }
+    &.in{
+        animation: backInRight; 
+        animation-duration: 1.5s;
+    }
 }
 
 .auth__title{

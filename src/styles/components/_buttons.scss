@@ -4,13 +4,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
     padding: 10px;
     transition: all 0.2s ease;
     font-size: 15px;
     font-weight: 500;
-    &:active:hover {
+    &:hover:not(:disabled){
         background-color: $orange;
         font-size: 17px;
     }
@@ -26,10 +24,19 @@
         color: lighten($primary, 10%);
         cursor: wait;
     }
-    &:active:hover:not() {
+    &:hover:not(:disabled){
         background-color: $secondary;
         color: white;
     }
+}
+
+.btn-danger {   
+    background-color: red;
+    &:hover:not(:disabled){
+        background-color: darken(red, 10%);
+        font-size: 17px;
+    }
+
 }
 .btn-block{
     width: 100%;

@@ -5,6 +5,7 @@ import { types } from '../types/types';
 import { firebase, googleAuthProvider } from '../firebase/firebaseConfig';
 import { setLoading, setError, setLoadingEnd, removeError } from './ui';
 import { showAlert } from '../helpers/auth';
+import { clearNotes } from './notes';
 
 
 
@@ -54,8 +55,7 @@ export const startLoginGoogle = () => {
         dispatch(setLoading());
         firebase.auth().signInWithPopup(googleAuthProvider)
             .then(({ user }) => {
-
-                dispatch(login(user.uid, user.displayName));
+                dispatch(login(user.uid, user.displayName,user.photoURL));
             }).catch(e => {
                 console.log(e);
                 dispatch(setError(e.message));
@@ -65,11 +65,12 @@ export const startLoginGoogle = () => {
     };
 }
 
-export const login = (uid, displayName) => ({
+export const login = (uid, displayName,photoURL = null) => ({
     type: types.LOGIN,
     payload: {
         uid,
-        displayName
+        displayName,
+        photoURL
     }
 });
 
@@ -77,8 +78,12 @@ export const startLogout = () => {
     return async (dispatch) => {
         await firebase.auth().signOut();
         dispatch(logout());
+        dispatch(clearNotes());
     }
 }
+
+
+
 export const logout = () => ({
     type: types.LOGOUT
 });

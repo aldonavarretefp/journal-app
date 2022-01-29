@@ -1,7 +1,9 @@
+//create a var for the sidebar width
+$sidebarWidth: 350px;
+
 .journal__main-content {
     display: flex;
     background-color: $orange;
-    
 }
 
 .journal__sidebar{
@@ -12,21 +14,33 @@
     flex-direction: column;
     height: 100vh;
     margin:0px;
-    width: 350px;
+    width: $sidebarWidth;
     padding-right: 10px;
 
 }
+
 .journal__sidebar-navbar{
     align-items: center;
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 10px;
+    h3 {
+        font-weight: 100;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.journal__sidebar-navbar h3 {
-    font-weight: 100;
-
+.journal__sidebar-navbar-user-image{
+    height:30px;
+    width:30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .journal__new-entry{
@@ -71,23 +85,45 @@
     margin-top: 10px;
     margin-left:10px;
     width: 90%;    
-    overflow-y: scroll;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
+
 .journal__entry{
     align-items: center;
     display: flex;
     background-color: white;
     border-radius: 2px;
     color:$primary;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    height: 75px;
+    transition: border 0.3s ease, 
+        background-color 0.3s ease,
+        color 0.3s ease;
+    &:hover{
+        background-color: $secondary;
+        color: white;
+        border: 1px solid $orange;
+        span{
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
 
 
 }
 .journal__entry-picture{
     width: 75px;
-    height: 75px;
+    height: 70px;
+    margin: 15px 5px;
     border-radius: 2px;
 }
 
@@ -102,10 +138,19 @@
 .journal__entry-title{
     font-size: 12px;
     font-weight: 500;
+    white-space: nowrap;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .journal__entry-content{
     font-size: 9px;
     margin-top: 10px;
+    white-space: nowrap; 
+    width: 100px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 
 }
 .journal__entry-date-box{
@@ -119,6 +164,6 @@
 }
 
 .journal__entry-date-box p{
+    color: $orange;
     margin: 0;
-
 }

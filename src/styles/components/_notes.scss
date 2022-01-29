@@ -1,3 +1,4 @@
+
 .notes__main-content{
     display: flex;
     flex-direction: column;
@@ -30,8 +31,11 @@
     border: none;
     background-color: transparent;
     letter-spacing: 2px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
     &:focus{
         outline: none;
+        opacity: 1;
     }
     //placeholder white
     &::-webkit-input-placeholder {
@@ -41,35 +45,43 @@
 
 .notes__title-input {
     color: white;
+    text-align: justify;
     font-size: 45px;
     font-weight: 500;
-    margin-bottom: 30px;
-
 }
 
 
 .notes__text-area{
+    color: white;
     text-align: justify;
     white-space: normal;    
-    color: white;
     font-size: 16px;
     flex: 1 1 auto;
     resize: none;
 
 }
 
-.notes__image img {
-    margin-left: 40px;
-    margin-bottom: 20px;
-    height: 150px;
-    object-fit: cover;
-    cursor: pointer;
-    box-shadow: rgba(255, 254, 255, 0.4) -5px 5px, rgba(235, 224, 231, 0.3) -10px 10px, rgba(230, 224, 228, 0.2) -15px 15px, rgba(249, 249, 249, 0.1) -20px 20px, rgba(228, 228, 228, 0.05) -25px 25px;
-    transition: all 0.3s ease-in-out;
-    &:hover{
-        box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+.notes__image {
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+    margin-bottom: 0px;
+    height: 300px;
+    flex-wrap: wrap;
+    img {
+        margin-left: 40px;
+        margin-bottom: 20px;
+        height: 120px;
+        object-fit: cover;
+        cursor: pointer;
+        box-shadow: rgba(255, 254, 255, 0.4) -5px 5px, rgba(235, 224, 231, 0.3) -10px 10px, rgba(230, 224, 228, 0.2) -15px 15px, rgba(249, 249, 249, 0.1) -20px 20px, rgba(228, 228, 228, 0.05) -25px 25px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            box-shadow: rgba(8, 3, 40, 0.4) -5px 5px, rgba(6, 7, 75, 0.3) -10px 10px, rgba(6, 6, 57, 0.2) -15px 15px, rgba(70, 18, 143, 0.1) -20px 20px, rgba(14, 6, 120, 0.05) -25px 25px;
+            height: 125px;
+        }
     }
-    &:hover {
-        height: 160px;
+    &::-webkit-scrollbar {
+        display: none;
     }
 }
