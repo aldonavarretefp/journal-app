@@ -70,13 +70,17 @@
 
 .auth__social-networks{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 20px;
+    justify-content: center;
+    margin-top: 10px;
     padding-bottom: 20px;
     align-items: center;
     width: 100%;
+    p{
+        margin-bottom: 10px;
+        border-bottom: 1px solid gray;
+        display: inline-block;
+    }
 }
 
 .auth__alert-error{

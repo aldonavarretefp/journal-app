@@ -52,7 +52,7 @@ export const LoginScreen = () => {
 
 
         <div className="auth__social-networks">
-          <p>Login with your fav network</p>
+          <p>or</p>
           <div 
             className="google-btn"
             onClick={handleGoogleLogin}

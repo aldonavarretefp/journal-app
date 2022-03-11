@@ -16,6 +16,7 @@ export const startLoginEmailPassword = (email, password) => {
         dispatch(setLoading());
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(({ user }) => {
+                console.log(user);
                 dispatch(login(user.uid, user.displayName));
                 dispatch(removeError());
             }).catch(e => {

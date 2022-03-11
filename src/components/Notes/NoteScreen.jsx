@@ -39,7 +39,6 @@ export const NoteScreen = () => {
     return (
         <div className="notes__main-content animate__animated  animate__fadeIn animate__faster">
             <NotesAppBar date={date} />
-
             <div className="notes__content">
                 <textarea 
                 className="notes__title-input"

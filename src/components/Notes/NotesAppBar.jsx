@@ -69,18 +69,18 @@ export const NotesAppBar = ({date}) => {
             }
         </span>
 
-        <div>
-            <button className="btn btn-danger mr-1" onClick={handleDelete}>
+        <div className='notes__buttons-container'>
+            <button className="btn btn-danger mr-5" onClick={handleDelete}>
                 Delete Note
             </button>
             <button 
-            className="btn mr-1"
+            className="btn mr-1 "
             onClick={handlePicture}
             >
                 Picture
             </button>
             <button 
-                className="btn btn-primary"
+                className="btn"
                 onClick={handleSave}
             >
                 Save

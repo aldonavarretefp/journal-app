@@ -10,7 +10,7 @@
     font-weight: 500;
     &:hover:not(:disabled){
         background-color: $orange;
-        font-size: 17px;
+        transform: scale(1.05);
     }
     &:focus{
         outline: none;
@@ -34,7 +34,7 @@
     background-color: red;
     &:hover:not(:disabled){
         background-color: darken(red, 10%);
-        font-size: 17px;
+        transform: scale(1.2);
     }
 
 }
